@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "profiles",
+  "info": {
+    "singularName": "profile",
+    "pluralName": "profiles",
+    "displayName": "Profiles",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "token": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "balance": {
+      "type": "decimal",
+      "required": true,
+      "default": 0
+    },
+    "comment": {
+      "type": "string"
+    },
+    "traffic_enabled": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "api_token": {
+      "type": "string"
+    },
+    "api_enabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "wallets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::payment-method.payment-method",
+      "mappedBy": "profile"
+    },
+    "rate_in": {
+      "type": "decimal"
+    },
+    "rate_out": {
+      "type": "decimal"
+    },
+    "qr_code": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "banks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bank.bank"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "wallet_code": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.tmp
+build
+node_modules
+public/uploads/*
+.env*
+.esling*
+.git*
+.strapi-updater.json
+yarn.lock

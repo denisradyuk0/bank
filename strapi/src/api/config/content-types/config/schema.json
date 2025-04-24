@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "configs",
+  "info": {
+    "singularName": "config",
+    "pluralName": "configs",
+    "displayName": "Config"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "rate_in": {
+      "type": "decimal"
+    },
+    "rate_out": {
+      "type": "decimal"
+    },
+    "wallet_code": {
+      "type": "string"
+    },
+    "wallet_qr": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "bot": {
+      "type": "string"
+    }
+  }
+}

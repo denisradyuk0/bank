@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deposits",
+  "info": {
+    "singularName": "deposit",
+    "pluralName": "deposits",
+    "displayName": "Deposit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "success"
+      ],
+      "default": "pending"
+    },
+    "deposit_id": {
+      "type": "biginteger",
+      "required": true
+    },
+    "profile": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::profile.profile"
+    },
+    "amount": {
+      "type": "biginteger",
+      "required": true
+    }
+  }
+}

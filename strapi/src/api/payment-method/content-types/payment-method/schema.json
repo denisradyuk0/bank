@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "payment_methods",
+  "info": {
+    "singularName": "payment-method",
+    "pluralName": "payment-methods",
+    "displayName": "Payment Method",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "bank": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::bank.bank"
+    },
+    "card": {
+      "type": "string",
+      "required": false
+    },
+    "expiration": {
+      "type": "string",
+      "required": false
+    },
+    "fullname": {
+      "type": "string"
+    },
+    "telegram": {
+      "type": "string"
+    },
+    "limit": {
+      "type": "biginteger",
+      "required": true
+    },
+    "requests_per_day": {
+      "type": "biginteger"
+    },
+    "name": {
+      "type": "string"
+    },
+    "profile": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::profile.profile",
+      "inversedBy": "wallets"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "active",
+        "disabled",
+        "archived"
+      ],
+      "default": "disabled"
+    }
+  }
+}
